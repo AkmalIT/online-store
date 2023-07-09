@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { DeviceInfo } from 'src/models/device-info-model';
 import { CreateInfoDto } from './dto/create-info.dto';
+import { DeviceInfo } from 'src/common/models/device-info-model';
 
 @Injectable()
 export class DeviceInfoService {

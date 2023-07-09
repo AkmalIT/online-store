@@ -1,24 +1,24 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { User } from './common/models/user-model';
+import { Basket } from './common/models/basket-model';
+import { BasketDevice } from './common/models/basket-device-model';
+import { Type } from './common/models/type-model';
+import { Brand } from './common/models/brand-models';
+import { Device } from './common/models/device-model';
+import { Rating } from './common/models/rating-model';
+import { DeviceInfo } from './common/models/device-info-model';
+import { TypeBrand } from './common/models/type-brand-model';
+import { UsersModule } from './modules/users/users.module';
+import { TypesModule } from './modules/types/types.module';
+import { BrandsModule } from './modules/brands/brands.module';
+import { DeviceModule } from './modules/device/device.module';
+import { FilesModule } from './common/files/files.module';
+import { RatingModule } from './modules/rating/rating.module';
+import { DeviceInfoModule } from './modules/device-info/device-info.module';
+import { BasketDeviceModule } from './modules/basket_device/basket_device.module';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { User } from './models/user-model';
-import { Basket } from './models/basket-model';
-import { BasketDevice } from './models/basket-device-model';
-import { Brand } from './models/brand-models';
-import { Device } from './models/device-model';
-import { Rating } from './models/rating-model';
-import { DeviceInfo } from './models/device-info-model';
-import { TypeBrand } from './models/type-brand-model';
-import { UsersModule } from './users/users.module';
-import { TypesModule } from './types/types.module';
-import {Type} from "./models/type-model"
-import { BrandsModule } from './brands/brands.module';
-import { DeviceModule } from './device/device.module';
-import { FilesModule } from './files/files.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
-import { RatingModule } from './rating/rating.module';
-import { DeviceInfoModule } from './device-info/device-info.module';
-import { BasketDeviceModule } from './basket_device/basket_device.module';
 import * as path from "path"  
 
 @Module({
@@ -47,7 +47,6 @@ import * as path from "path"
     RatingModule,
     DeviceInfoModule,
     BasketDeviceModule
-
   ],
   controllers: [],
   providers: [],

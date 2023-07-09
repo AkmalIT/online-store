@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Type } from 'src/models/type-model';
 import { CreateTypeDto } from './dto/create-type.dto';
+import { Type } from 'src/common/models/type-model';
 
 @Injectable()
 export class TypesService {

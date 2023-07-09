@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
-import { CreateTypeDto } from 'src/types/dto/create-type.dto';
 import { BrandsService } from './brands.service';
+import { CreateTypeDto } from '../types/dto/create-type.dto';
 
 @Controller('brands')
 export class BrandsController {

@@ -1,10 +1,10 @@
 import { HttpException, HttpStatus, Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Basket } from 'src/models/basket-model';
-import { User } from 'src/models/user-model';
 import { CreateUserDto } from './dto/create-user.dto';
 import {JwtService} from "@nestjs/jwt"
 import * as bcrypt from "bcrypt"
+import { User } from 'src/common/models/user-model';
+import { Basket } from 'src/common/models/basket-model';
 
 @Injectable()
 export class UsersService {

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Rating } from 'src/models/rating-model';
 import { CreateRatingDto } from './dto/create-rating.dto';
+import { Rating } from 'src/common/models/rating-model';
 
 @Injectable()
 export class RatingService {

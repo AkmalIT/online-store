@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Device } from 'src/models/device-model';
 import { CreateDeviceDto } from './dto/create-device.dto';
-import { FilesService } from 'src/files/files.service';
+import { Device } from 'src/common/models/device-model';
+import { FilesService } from 'src/common/files/files.service';
 
 @Injectable()
 export class DeviceService {

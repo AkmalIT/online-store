@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { BasketDevice } from 'src/models/basket-device-model';
 import { BasketDeviceDto } from './dto/create-basket-device.dto';
+import { BasketDevice } from 'src/common/models/basket-device-model';
 
 @Injectable()
 export class BasketDeviceService {
