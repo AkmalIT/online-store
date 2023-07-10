@@ -9,7 +9,12 @@ export class UsersController {
 
     @Post('/registration')
     registration(@Body() dto: CreateUserDto){
-        return this.userService.registration(dto)
+        try{
+            return this.userService.registration(dto)
+        }
+        catch(e){
+            console.log(e); 
+        }
     }
 
     @Post('/login')

@@ -14,14 +14,21 @@ export class UsersService {
      private jwtService: JwtService){}
 
      async registration(dto: CreateUserDto){
-        const condidate = await this.getUserByEmail(dto.email)
-        if(condidate){
-            throw new HttpException("Пользователь с таким email существует", HttpStatus.BAD_REQUEST)
+        try{
+
+            const condidate = await this.getUserByEmail(dto.email)
+            if(condidate){
+                throw new HttpException("Пользователь с таким email существует", HttpStatus.BAD_REQUEST)
+            }
+            const hashPassword = await bcrypt.hash(dto.password, 5)
+            const user = await this.userModel.create({...dto, password: hashPassword})
+            const basket = await this.basketModel.create({userId: user.id})
+            return this.generateToken(user)
         }
-        const hashPassword = await bcrypt.hash(dto.password, 5)
-        const user = await this.userModel.create({...dto, password: hashPassword})
-        const basket = await this.basketModel.create({userId: user.id})
-        return this.generateToken(user)
+        catch(e){
+            console.log(e);
+            
+        }
      }
 
      async login(dto: CreateUserDto){
